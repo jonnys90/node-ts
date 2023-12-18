@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import cookieParser from "cookie-parser";
 import myMorgan from "./service/morgan";
 
@@ -9,5 +9,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(myMorgan);
 // app.use(express.static(path.join(__dirname, 'public')));
+
+app.get("/", (req: Request, res: Response) => {
+  console.log("hello world");
+  //   res.send()
+  res.json({ msg: "hello from server" });
+});
 
 export default app;

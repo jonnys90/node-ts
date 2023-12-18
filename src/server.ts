@@ -69,7 +69,9 @@ const onListening = (): void => {
   let addr = server.address();
   let bind = typeof addr === "string" ? "pipe " + addr : addr?.port;
   //   debug("Listening on " + bind);
-  console.log(`App is running on http://localhost:${bind}`);
+  console.log(
+    `App is running on ${chalk.blueBright(`http://localhost:${bind}`)}`
+  );
 };
 
 /**
