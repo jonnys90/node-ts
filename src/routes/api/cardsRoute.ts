@@ -1,8 +1,6 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
+import { getHandler } from "../../controllers/cardsController";
 const router = Router();
 //http://localhost:3030/api/cards/
-router.get("/", (req: Request, res: Response) => {
-  console.log("sub route");
-  res.json({ msg: "hello from cards route" });
-});
+router.get("/", getHandler);
 export default router;

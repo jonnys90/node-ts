@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import cookieParser from "cookie-parser";
 import myMorgan from "./service/morgan";
 import route from "./routes/route";
