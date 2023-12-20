@@ -8,4 +8,9 @@ router.get("/", (req: Request, res: Response) => {
 });
 
 router.use("/cards", cardsRoute);
+
+router.use((req: Request, res: Response) =>
+  res.status(404).json({ msg: "page not found" })
+);
+
 export default router;

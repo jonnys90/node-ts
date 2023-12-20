@@ -16,6 +16,7 @@ const postHandler = (
   console.log("body", req.body);
   console.log("query", req.query);
   console.log("params", req.params);
+  console.log("headers", req.headers);
   res.json({
     body: req.body,
     query: req.query,
@@ -23,4 +24,12 @@ const postHandler = (
   });
 };
 
-export { getHandler, postHandler };
+const putHandler = (
+  req: Request<{ id: string }, {}, { title: string; subtitle: string }, {}>,
+  res: Response
+) => {
+  // res.status(400).json({ msg: "email is not valid" });
+  throw new Error("something went wrong");
+};
+
+export { getHandler, postHandler, putHandler };
