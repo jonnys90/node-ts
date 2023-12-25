@@ -32,4 +32,9 @@ const putHandler = (
   throw new Error("something went wrong");
 };
 
-export { getHandler, postHandler, putHandler };
+const postJoiTest = (req: Request, res: Response) => {
+  console.log("sub route");
+  res.json({ msg: "hello from cards route" });
+};
+
+export { getHandler, postHandler, putHandler, postJoiTest };
